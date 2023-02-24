@@ -1,6 +1,6 @@
 body {
   max-width: 100%;
-  min-height: 150vh;
+  min-height: 120vh;
   height: auto;
   background-image: url(/assets/backgroound.jpg);
   background-repeat: no-repeat;
@@ -19,6 +19,9 @@ header {
 h1 {
   margin-top: 0;
 }
+h2 {
+  padding: auto 1rem;
+}
 #yes,
 #no {
   color: pink;
@@ -36,12 +39,16 @@ button {
 }
 .main-test {
   width: 50%;
+  min-width: 343px;
   margin: auto;
 }
 .main-visible {
   width: 90%;
   display: block;
   margin: auto;
+}
+.search {
+  width: 120%;
 }
 .noTxt {
   display: none;
@@ -96,6 +103,7 @@ button {
 }
 #output {
   width: 70%;
+  min-width: 240px;
   background-color: wheat;
   color: purple;
   font-size: 1.2rem;
@@ -208,6 +216,8 @@ input[type="radio"].change-blue:checked + label {
   display: none;
 }
 .anotherCatch-visible {
+  max-width: 230px;
+  padding: auto 1rem;
   display: block;
   margin: 1rem auto;
   background-color: wheat;
@@ -237,3 +247,25 @@ input[type="radio"].change-blue:checked + label {
 .options select {
   background-color: wheat;
 }
+
+@media screen and (max-width: 1005px) {
+  .search {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 725px) {
+  .noTxt-p h3 {
+    font-size: 1.5rem;
+  }
+  body {
+    min-height: 250vh;
+  }
+}
+/* @media screen and (max-width: 600px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+} */
