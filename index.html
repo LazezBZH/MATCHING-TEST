@@ -8,6 +8,7 @@
         <meta name="description" content="concours api" />
         
         <link rel="stylesheet" href="./CSS/index.css"/>
+        <link rel="stylesheet" href="./CSS/animations.css"/>
         <title>MATCHING TEST</title>
         
     </head>
@@ -16,24 +17,28 @@
         <header>
             <h1>MATCHING TEST</h1>
             <h2>Do you really want to know if you're matching with your partner?</h2>
+            <button id="yes">YES</button>  <button id="no">NO</button>
         </header>
-        <main class="">
+        <section class="noTxt"><div class="noTxt-p"><h3>We're sad but we respect your choice BYE!</h3>
+        <button id="change-mind">If you've changed your mind click</button></div></section>
+        <main class="main">
+            <div class="main-test">
+             
+                <input title="your firstname" type="text" placeholder="your firstname"  id="input-you">
             
-
-            <input type="text" placeholder="your firstname"  id="input-you">
-            <input type="text" placeholder="your partner's firstname"  id="input-part">
+            <input title="partner's firstname" type="text" placeholder="your partner's firstname"  id="input-part">
             <button id="resultBtn">Tell me!</button>
-            <div id="output"></div>
-            <button class="anotherCatch">I don't like this result, please suggest me another partner</button>
-            <button class="anotherRandom">I don't like this result, please  give me another random firstname</button>
+            <div id="output" class="output"></div>
+            <button class="anotherCatch">You don't like this result, I can suggest you another partner</button>
+            <button class="anotherRandom">or  give you another random firstname</button></div>
             <div id="select-form" class="options" action="">
-                <select name="gender" id="gender">
+                <select title="gender" name="gender" id="gender">
                     <option value="" >Choose a gender</option>
                     <option value="male">Man first name</option>
                     <option value="female">Woman first name</option>
                     <option value="egal">Doesn't matter</option>
                 </select>
-                 <select name="origin" id="origin">
+                 <select title="origin" name="origin" id="origin">
                     <option value="">Choose an origin</option>
                     <option value="egal">Random origins</option>
                     <option value="fi">Finland</option>
@@ -50,86 +55,89 @@
                 <button id="go" class="go">GO</button>
             </div>
 <form id="radio-form" action="">
-   <div class="form"> <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-a" value="Jean">
-        <label for="change-a">Jean</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-b" value="Nathalie">
-        <label for="change-b">Nathalie</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-c" value="Éric">
-        <label for="change-c">Éric</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-d" value="Theo">
-        <label for="change-d">Theo</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-e" value="Jack">
-        <label for="change-e">Jack</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-f" value="Tracy">
-        <label for="change-f">Tracy</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-g" value="Rose">
-        <label for="change-g">Rose</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-h" value="Peter">
-        <label for="change-h">Peter</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-i" value="Charlotte">
-        <label for="change-i">Amélie</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-j" value="Olaf">
-        <label for="change-j">Olaf</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-k" value="Olivia">
-        <label for="change-k">Olivia</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-l" value="Denis">
-        <label for="change-l">Denis</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-m" value="Manon">
-        <label for="change-m">Manon</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-n" value="Kevin">
-        <label for="change-n">Kevin</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-o" value="Carlos">
-        <label for="change-o">Carlos</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-p" value="Iris">
-        <label for="change-p">Iris</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-q" value="Charlotte">
-        <label for="change-q">Charlotte</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-r" value="Patricia">
-        <label for="change-r">Patricia</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-s" value="Henri">
-        <label for="change-s">Henri</label></div>    
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-t" value="Charlotte">
-        <label for="change-t">Raymonde</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-u" value="Laila">
-        <label for="change-u">Laila</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-v" value="Bob">
-        <label for="change-v">Bob</label></div>
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-w" value="Marc">
-        <label for="change-w">Marc</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-x" value="Jenny">
-        <label for="change-x">Jenny</label></div>
-    <div class="pink">
-        <input type="radio" name="change" class="change change-pink" id="change-y" value="Eve">
-        <label for="change-y">Eve</label></div>     
-    <div class="blue">
-        <input type="radio" name="change" class="change change-blue" id="change-z" value="Xavier">
-        <label for="change-z">Xavier</label></div>   
-    </div></div>
-    <button id="changeBtn">Confirmer le changement</button>
+    <div class="form" id="form"> 
+        <div class="blue blue1">
+            <input type="radio" name="change" class="change change-blue" id="change-a" value="Jean">
+            <label for="change-a">Jean</label></div>
+        <div class="pink pink1">
+            <input type="radio" name="change" class="change change-pink" id="change-b" value="Nathalie">
+            <label for="change-b">Nathalie</label></div>
+        <div class="blue blue2">
+            <input type="radio" name="change" class="change change-blue" id="change-c" value="Éric">
+            <label for="change-c">Éric</label></div>
+        <div class="blue blue3">
+            <input type="radio" name="change" class="change change-blue" id="change-d" value="Theo">
+            <label for="change-d">Theo</label></div>
+        <div class="blue blue4">
+            <input type="radio" name="change" class="change change-blue" id="change-e" value="Jack">
+            <label for="change-e">Jack</label></div>
+        <div class="pink pink2">
+            <input type="radio" name="change" class="change change-pink" id="change-f" value="Tracy">
+            <label for="change-f">Tracy</label></div>
+        <div class="pink pink3">
+            <input type="radio" name="change" class="change change-pink" id="change-g" value="Rose">
+            <label for="change-g">Rose</label></div>
+        <div class="blue blue5">
+            <input type="radio" name="change" class="change change-blue" id="change-h" value="Peter">
+            <label for="change-h">Peter</label></div>
+        <div class="pink pink4">
+            <input type="radio" name="change" class="change change-pink" id="change-i" value="Charlotte">
+            <label for="change-i">Amélie</label></div>
+        <div class="blue blue6">
+            <input type="radio" name="change" class="change change-blue" id="change-j" value="Olaf">
+            <label for="change-j">Olaf</label></div>
+        <div class="pink pink5">
+            <input type="radio" name="change" class="change change-pink" id="change-k" value="Olivia">
+            <label for="change-k">Olivia</label></div>
+        <div class="blue blue7">
+            <input type="radio" name="change" class="change change-blue" id="change-l" value="Denis">
+            <label for="change-l">Denis</label></div>
+        <div class="pink pink6">
+            <input type="radio" name="change" class="change change-pink" id="change-m" value="Manon">
+            <label for="change-m">Manon</label></div>
+        <div class="blue blue8">
+            <input type="radio" name="change" class="change change-blue" id="change-n" value="Kevin">
+            <label for="change-n">Kevin</label></div>
+        <div class="blue blue9">
+            <input type="radio" name="change" class="change change-blue" id="change-o" value="Carlos">
+            <label for="change-o">Carlos</label></div>
+        <div class="pink pink7">
+            <input type="radio" name="change" class="change change-pink" id="change-p" value="Iris">
+            <label for="change-p">Iris</label></div>
+        <div class="pink pink8">
+            <input type="radio" name="change" class="change change-pink" id="change-q" value="Charlotte">
+            <label for="change-q">Charlotte</label></div>
+        <div class="pink pink9">
+            <input type="radio" name="change" class="change change-pink" id="change-r" value="Patricia">
+            <label for="change-r">Patricia</label></div>
+        <div class="blue blue10">
+            <input type="radio" name="change" class="change change-blue" id="change-s" value="Henri">
+            <label for="change-s">Henri</label></div>    
+        <div class="pink pink10">
+            <input type="radio" name="change" class="change change-pink" id="change-t" value="Charlotte">
+            <label for="change-t">Raymonde</label></div>
+        <div class="pink pink11">
+            <input type="radio" name="change" class="change change-pink" id="change-u" value="Laila">
+            <label for="change-u">Laila</label></div>
+        <div class="blue blue11">
+            <input type="radio" name="change" class="change change-blue" id="change-v" value="Bob">
+            <label for="change-v">Bob</label></div>
+        <div class="blue blue12">
+            <input type="radio" name="change" class="change change-blue" id="change-w" value="Marc">
+            <label for="change-w">Marc</label></div>
+        <div class="pink pink12">
+            <input type="radio" name="change" class="change change-pink" id="change-x" value="Jenny">
+            <label for="change-x">Jenny</label></div>
+        <div class="pink pink13">
+            <input type="radio" name="change" class="change change-pink" id="change-y" value="Eve">
+            <label for="change-y">Eve</label></div>     
+        <div class="blue blue13">
+            <input type="radio" name="change" class="change change-blue" id="change-z" value="Xavier">
+            <label for="change-z">Xavier</label></div>   
+    </div>
+    <div class="changeBtn"><p>Catch one and</p>
+    <button >Click here</button></div>
+    
 </form>
             
 
@@ -138,6 +146,7 @@
 
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <script src="./JS/script.js"></script>
+        <!-- <script src="./JS/cards.js"></script> -->
     
     
         

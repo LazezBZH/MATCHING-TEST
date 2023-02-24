@@ -11,7 +11,10 @@ const origins = document.getElementById("origin");
 let origin = "";
 const genders = document.getElementById("gender");
 let gender = "";
-
+let comptOthers = 0;
+let comptOthersTowrite = 0;
+let comptRandom = 0;
+let comptRandomTowrite = 0;
 resultBtn.addEventListener("click", getResult);
 // change partner name with a catch
 anotherCatch.addEventListener("click", setOthers);
@@ -19,13 +22,32 @@ function setOthers() {
   form.style.display = "block";
   anotherCatch.classList.remove("anotherCatch-visible");
   anotherRandom.classList.remove("anotherRandom-visible");
+  comptOthers++;
+  comptOthersTowrite = comptOthers - 1;
+  if (comptOthers > 3) {
+    alert(
+      "You've allready change " +
+        comptOthersTowrite +
+        " times of partner, you should be more serious!"
+    );
+  }
+  console.log(comptOthers);
 }
 // change your name with random
 anotherRandom.addEventListener("click", setRandom);
 function setRandom() {
-  options.style.display = "block";
+  options.classList.add("options-visible");
   anotherRandom.classList.remove("anotherRandom-visible");
   anotherCatch.classList.remove("anotherCatch-visible");
+  comptRandom++;
+  comptRandomTowrite = comptRandom - 1;
+  if (comptRandom > 3) {
+    alert(
+      "You've allready change " +
+        comptRandomTowrite +
+        " times of firstname, shouldn't it be easier to change your partner?"
+    );
+  }
 }
 
 go.addEventListener("click", getRandom);
@@ -38,12 +60,13 @@ form.addEventListener("submit", function (event) {
     form.reset();
     form.style.display = "none";
     output.innerHTML = "";
+    output.classList.remove("output-visible");
   }
 });
 
 // get result
 function getResult() {
-  const options = {
+  const option = {
     method: "GET",
     headers: {
       "X-RapidAPI-Key": "7c75dc8b0emsh6f35227c3ac1090p1db2cbjsnfb932147fd7d",
@@ -52,22 +75,25 @@ function getResult() {
   };
   let yourName = inputYou.value;
   let partName = inputPart.value;
+  output.innerHTML = "";
   fetch(
     "https://love-calculator.p.rapidapi.com/getPercentage?sname=" +
       yourName +
       "&fname=" +
       partName,
-    options
+    option
   )
     .then((response) => response.json())
     .then(
       (response) =>
-        (output.innerHTML = `<p>Hey ${response.sname} and ${response.fname}</p><p>Your Love Test Result is ${response.percentage}% matching</p><p> ${response.result} </p> `)
+        (output.innerHTML = `<p>Hey ${response.sname} and ${response.fname}</p><p>Your Love Test Result is ${response.percentage}% matching</p><p class="response-result"> ${response.result} </p> `),
+      anotherCatch.classList.add("anotherCatch-visible"),
+      anotherRandom.classList.add("anotherRandom-visible"),
+      (form.style.display = "none"),
+      options.classList.remove("options-visible"),
+      output.classList.add("output-visible")
     )
     .catch((err) => console.error(err));
-  anotherCatch.classList.add("anotherCatch-visible");
-  anotherRandom.classList.add("anotherRandom-visible");
-  form.style.display = "none";
 }
 
 //choice gender
@@ -99,9 +125,36 @@ function getRandom() {
             "' will be your new firstname, click on OK and it will be writen in the input!"
         ),
         console.log("RESPONSE", response),
-        (options.style.display = "none"),
-        (output.innerHTML = "")
+        options.classList.remove("options-visible"),
+        (output.innerHTML = ""),
+        output.classList.remove("output-visible")
       )
     )
     .catch((err) => console.error(err));
+}
+
+const yes = document.getElementById("yes");
+const main = document.querySelector(".main");
+const no = document.getElementById("no");
+const noTxt = document.querySelector(".noTxt");
+const changeMind = document.getElementById("change-mind");
+yes.addEventListener("click", showMain);
+function showMain() {
+  main.classList.add("main-visible");
+  yes.style.display = "none";
+  no.style.display = "none";
+}
+
+no.addEventListener("click", showNo);
+function showNo() {
+  noTxt.classList.add("noTxt-visible");
+  yes.style.display = "none";
+  no.style.display = "none";
+}
+changeMind.addEventListener("click", showMainChange);
+function showMainChange() {
+  main.classList.add("main-visible");
+  noTxt.classList.remove("noTxt-visible");
+  yes.style.display = "none";
+  no.style.display = "none";
 }
