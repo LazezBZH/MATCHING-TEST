@@ -1,0 +1,90 @@
+input[type="radio"].change {
+  display: none;
+}
+input[type="radio"].change + label {
+  background-color: rgba(255, 192, 203, 0);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 3.5rem;
+  border: none;
+}
+input[type="radio"].change-pink:checked + label {
+  background-color: pink;
+  transform: scale(2);
+  border-radius: 10px;
+  z-index: 1;
+}
+input[type="radio"].change-blue:checked + label {
+  background-color: #00ddff;
+  transform: scale(2);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.pink {
+  width: 5rem;
+  height: 4rem;
+  position: relative;
+  margin: 0.5rem;
+  background-image: url("/assets/coeur-pink.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 2rem;
+  color: #800080;
+}
+.blue {
+  width: 5rem;
+  height: 4rem;
+  position: relative;
+  margin: 0.5rem;
+  background-image: url("/assets/coeur-blue.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 2rem;
+  color: #0000ff;
+}
+.form {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 7rem;
+  justify-content: center;
+}
+#radio-form {
+  display: none;
+  position: relative;
+}
+#changeBtn {
+  position: absolute;
+  top: 10%;
+  width: 7rem;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: white;
+}
+.anotherCatch {
+  display: none;
+}
+.anotherCatch-visible {
+  display: block;
+}
+.anotherRandom {
+  display: none;
+}
+.anotherRandom-visible {
+  display: block;
+}
+.options {
+  display: none;
+}
