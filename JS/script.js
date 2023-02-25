@@ -64,6 +64,7 @@ form.addEventListener("submit", function (event) {
     form.style.display = "none";
     output.innerHTML = "";
     output.classList.remove("output-visible");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 });
 
