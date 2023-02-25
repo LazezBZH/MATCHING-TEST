@@ -9,6 +9,7 @@ body {
   margin: 0;
 }
 header {
+  position: relative;
   margin: 0;
   width: 100%;
   text-align: center;
@@ -20,13 +21,30 @@ h1 {
   margin-top: 0;
 }
 h2 {
-  padding: auto 1rem;
+  /* padding: auto 1rem; */
+  margin-bottom: 0.5rem;
 }
 #yes,
 #no {
   color: pink;
   background-color: purple;
   border: none;
+}
+.defil {
+  width: 100%;
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  bottom: -17px;
+  left: 0;
+}
+.defil input {
+  width: 100%;
+  border: none;
+  background-color: pink;
+}
+.defil-visible {
+  display: inline;
 }
 button {
   cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif"), default;

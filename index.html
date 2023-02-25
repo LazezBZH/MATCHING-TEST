@@ -13,11 +13,21 @@
         
     </head>
 
-    <body>
+    <body onLoad="startScroll()" onUnLoad="stopScroll()">
         <header>
             <h1>MATCHING TEST</h1>
             <h2>Do you really want to know if you're matching with your partner?</h2>
             <button id="yes">YES</button>  <button id="no">NO</button>
+            <!-- <div class="defil">&#x1F498;</div> -->
+<div class="defil">            <form name="formScroll">
+<p><input type="text" name="textScroll" style="font-family: Courier New" size="55"></p>
+</form></div>
+            <div class="audio"><audio
+            
+        autoplay
+        loop
+        src="/assets/mainSound.wav">
+    </audio></div>
         </header>
         <section class="noTxt"><div class="noTxt-p"><h3>We're sad but we respect your choice BYE!</h3>
         <button id="change-mind">If you've changed your mind click</button></div></section>
@@ -147,8 +157,9 @@
         </main>
 
         <noscript>You need to enable JavaScript to run this app.</noscript>
+                <script src="./JS/animations.js"></script>
         <script src="./JS/script.js"></script>
-        <!-- <script src="./JS/cards.js"></script> -->
+
     
     
         

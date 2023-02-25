@@ -15,7 +15,10 @@ let comptOthers = 0;
 let comptOthersTowrite = 0;
 let comptRandom = 0;
 let comptRandomTowrite = 0;
-resultBtn.addEventListener("click", getResult);
+const sound = document.querySelector(".audio");
+const defil = document.querySelector(".defil");
+
+resultBtn.addEventListener("click", displayResult);
 // change partner name with a catch
 anotherCatch.addEventListener("click", setOthers);
 function setOthers() {
@@ -65,7 +68,8 @@ form.addEventListener("submit", function (event) {
 });
 
 // get result
-function getResult() {
+
+async function fetchResult() {
   const option = {
     method: "GET",
     headers: {
@@ -73,37 +77,53 @@ function getResult() {
       "X-RapidAPI-Host": "love-calculator.p.rapidapi.com",
     },
   };
+
+  output.innerHTML = "";
   let yourName = inputYou.value;
   let partName = inputPart.value;
-  output.innerHTML = "";
-  fetch(
-    "https://love-calculator.p.rapidapi.com/getPercentage?sname=" +
-      yourName +
-      "&fname=" +
-      partName,
-    option
-  )
-    .then((response) => response.json())
-    .then(
-      (response) =>
-        (output.innerHTML = `<p>Hey ${response.sname} and ${response.fname}</p><p>Your Love Test Result is ${response.percentage}% matching</p><p class="response-result"> ${response.result} </p> `),
-      anotherCatch.classList.add("anotherCatch-visible"),
-      anotherRandom.classList.add("anotherRandom-visible"),
-      (form.style.display = "none"),
-      options.classList.remove("options-visible"),
-      output.classList.add("output-visible")
-    )
-    .catch((err) => console.error(err));
+  try {
+    let res = await fetch(
+      "https://love-calculator.p.rapidapi.com/getPercentage?sname=" +
+        yourName +
+        "&fname=" +
+        partName,
+      option
+    );
+
+    return await res.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-//choice gender
+async function displayResult() {
+  let result = await fetchResult();
+  if (result.percentage >= 50) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundTop.mp3">
+    </audio>`;
+  } else {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/mainSound.wav">
+    </audio>`;
+  }
+  output.innerHTML = `<p>Hey ${result.sname} and ${result.fname}</p><p>Your Love Test Result is ${result.percentage}% matching</p><p class="response-result"> ${result.result} </p> `;
+  anotherCatch.classList.add("anotherCatch-visible");
+  anotherRandom.classList.add("anotherRandom-visible");
+  form.style.display = "none";
+  options.classList.remove("options-visible");
+  output.classList.add("output-visible");
+}
 
 genders.addEventListener("change", setGender);
 function setGender() {
   gender = this.value;
   return gender;
 }
-//choice origin
 
 origins.addEventListener("change", setOrigin);
 function setOrigin() {
@@ -141,20 +161,22 @@ const changeMind = document.getElementById("change-mind");
 yes.addEventListener("click", showMain);
 function showMain() {
   main.classList.add("main-visible");
-  yes.style.display = "none";
-  no.style.display = "none";
+  defil.classList.add("defil-visible");
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
 }
 
 no.addEventListener("click", showNo);
 function showNo() {
   noTxt.classList.add("noTxt-visible");
-  yes.style.display = "none";
-  no.style.display = "none";
+  defil.classList.add("defil-visible");
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
 }
 changeMind.addEventListener("click", showMainChange);
 function showMainChange() {
   main.classList.add("main-visible");
   noTxt.classList.remove("noTxt-visible");
-  yes.style.display = "none";
-  no.style.display = "none";
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
 }
