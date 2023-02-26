@@ -2,12 +2,17 @@ body {
   max-width: 100%;
   min-height: 120vh;
   height: auto;
-  background-image: url(/assets/backgroound.jpg);
+  background-image: url(/assets/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0;
 }
+button {
+  cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif"), default;
+}
+
+/* header */
 header {
   position: relative;
   margin: 0;
@@ -21,7 +26,6 @@ h1 {
   margin-top: 0;
 }
 h2 {
-  /* padding: auto 1rem; */
   margin-bottom: 0.5rem;
 }
 #yes,
@@ -31,12 +35,13 @@ h2 {
   border: none;
 }
 .defil {
-  width: 100%;
+  width: 99%;
   display: none;
   position: absolute;
   overflow: hidden;
-  bottom: -17px;
+  bottom: -16px;
   left: 0;
+  padding-left: 0.5rem;
 }
 .defil input {
   width: 100%;
@@ -46,28 +51,8 @@ h2 {
 .defil-visible {
   display: inline;
 }
-button {
-  cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif"), default;
-}
-.main {
-  width: 100%;
-  max-width: 950px;
-  display: none;
-  padding-top: 2rem;
-}
-.main-test {
-  width: 50%;
-  min-width: 343px;
-  margin: auto;
-}
-.main-visible {
-  width: 90%;
-  display: block;
-  margin: auto;
-}
-.search {
-  width: 120%;
-}
+
+/* when refuses to know */
 .noTxt {
   display: none;
 }
@@ -80,12 +65,11 @@ button {
   right: 25%;
   top: 40%;
   transform: rotate(-20deg);
-  background-image: url(/assets/backgroound2.jpg);
+  background-image: url(/assets/no-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-
 .noTxt-p {
   display: flex;
   align-items: center;
@@ -107,6 +91,29 @@ button {
   color: pink;
   border-radius: 5px;
 }
+
+/* MAIN */
+.main {
+  width: 100%;
+  max-width: 950px;
+  display: none;
+  padding-top: 2rem;
+}
+.main-visible {
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+.main-test {
+  width: 50%;
+  min-width: 343px;
+  margin: auto;
+}
+.search {
+  width: 120%;
+}
+
+/* inputs output response */
 #input-part,
 #input-you {
   background-color: wheat;
@@ -130,7 +137,7 @@ button {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-style: solid;
-  border-image: url("/assets/backgroound.jpg") 200 / 10px round;
+  border-image: url("/assets/background.jpg") 200 / 10px round;
 }
 .output {
   display: none;
@@ -142,6 +149,41 @@ button {
   background-color: purple;
   color: wheat;
   margin: 0.5rem 1rem;
+}
+.anotherCatch {
+  display: none;
+}
+.anotherCatch-visible {
+  max-width: 230px;
+  padding: auto 1rem;
+  display: block;
+  margin: 1rem auto;
+  background-color: wheat;
+  padding: 0.5rem;
+  color: purple;
+}
+.anotherRandom {
+  display: none;
+}
+.anotherRandom-visible {
+  display: block;
+  margin: 1rem auto;
+  background-color: wheat;
+  padding: 0.5rem;
+  color: purple;
+}
+
+/* change catched partner */
+.form {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 7rem;
+  justify-content: center;
+}
+#radio-form {
+  display: none;
+  position: relative;
 }
 input[type="radio"].change {
   display: none;
@@ -169,13 +211,12 @@ input[type="radio"].change-blue:checked + label {
   border-radius: 10px;
   z-index: 1;
 }
-
 .pink {
   width: 5rem;
   height: 4rem;
   position: relative;
   margin: 0.5rem;
-  background-image: url("/assets/coeur-pink.svg");
+  background-image: url("/assets/pink-heart.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -187,27 +228,13 @@ input[type="radio"].change-blue:checked + label {
   height: 4rem;
   position: relative;
   margin: 0.5rem;
-  background-image: url("/assets/coeur-blue.svg");
+  background-image: url("/assets/blue-heart.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
   color: #0000ff;
 }
-.form {
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 7rem;
-  justify-content: center;
-}
-#radio-form {
-  display: none;
-  position: relative;
-  /* left: -25%;
-  width: 200%; */
-}
-
 .changeBtn {
   position: absolute;
   top: 10%;
@@ -230,42 +257,23 @@ input[type="radio"].change-blue:checked + label {
   );
   color: white;
 }
-.anotherCatch {
-  display: none;
-}
-.anotherCatch-visible {
-  max-width: 230px;
-  padding: auto 1rem;
-  display: block;
-  margin: 1rem auto;
-  background-color: wheat;
-  padding: 0.5rem;
-  color: purple;
-}
-.anotherRandom {
-  display: none;
-}
-.anotherRandom-visible {
-  display: block;
-  margin: 1rem auto;
-  background-color: wheat;
-  padding: 0.5rem;
-  color: purple;
-}
+
+/* change user firstname */
 .options {
   display: none;
 }
 .options-visible {
   display: block;
 }
+.options select {
+  background-color: wheat;
+}
 .options button {
   background-color: purple;
   color: wheat;
 }
-.options select {
-  background-color: wheat;
-}
 
+/* responsive */
 @media screen and (max-width: 1005px) {
   .search {
     display: flex;
@@ -282,8 +290,3 @@ input[type="radio"].change-blue:checked + label {
     min-height: 250vh;
   }
 }
-/* @media screen and (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-} */

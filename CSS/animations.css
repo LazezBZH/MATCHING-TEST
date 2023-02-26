@@ -207,6 +207,7 @@
   -o-animation: move13 13s ease-in-out infinite;
   -ms-animation: move13 13s ease-in-out infinite;
 }
+
 @keyframes move1 {
   0% {
     transform: translateY(0px) translateX(0px);
@@ -1316,62 +1317,3 @@
     transform: translatey(0px);
   }
 }
-
-/* defil */
-/* .defil-visible {
-  display: inline-block;
-  white-space: nowrap;
-  -webkit-animation: linear defil 20s infinite;
-  -moz-animation: linear defil 20s infinite;
-  -o-animation: linear defil 20s infinite;
-  -ms-animation: linear defil 20s infinite;
-  animation: linear defil 5s infinite;
-  margin: 0;
-  text-align: left;
-}
-@keyframes defil {
-  0% {
-    -webkit-transform: translate(0);
-    transform: translate(0);
-  }
-  100% {
-    -webkit-transform: translate(-100%);
-    transform: translate(-100%);
-  }
-}
-@-webkit-keyframes defil {
-  0%,
-  100% {
-    margin-left: 0;
-  }
-  99.99% {
-    margin-left: -100%;
-  }
-}
-@-moz-keyframes defil {
-  0%,
-  100% {
-    margin-left: 0;
-  }
-  99.99% {
-    margin-left: -100%;
-  }
-}
-@-o-keyframes defil {
-  0%,
-  100% {
-    margin-left: 0;
-  }
-  99.99% {
-    margin-left: -100%;
-  }
-}
-@-ms-keyframes defil {
-  0%,
-  100% {
-    margin-left: 0;
-  }
-  99.99% {
-    margin-left: -100%;
-  }
-} */

@@ -1,75 +1,69 @@
+const yes = document.getElementById("yes");
+const no = document.getElementById("no");
+const noTxt = document.querySelector(".noTxt");
+const changeMind = document.getElementById("change-mind");
+
+const main = document.querySelector(".main");
+
 const inputPart = document.getElementById("input-part");
 const inputYou = document.getElementById("input-you");
+const resultBtn = document.getElementById("resultBtn");
+const output = document.getElementById("output");
+
 const anotherCatch = document.querySelector(".anotherCatch");
+const form = document.querySelector("#radio-form");
+
 const anotherRandom = document.querySelector(".anotherRandom");
 const options = document.querySelector(".options");
-const output = document.getElementById("output");
-const form = document.querySelector("#radio-form");
-let resultBtn = document.getElementById("resultBtn");
-const go = document.getElementById("go");
 const origins = document.getElementById("origin");
-let origin = "";
 const genders = document.getElementById("gender");
+const go = document.getElementById("go");
+
+const sound = document.querySelector(".audio");
+const defil = document.querySelector(".defil");
+
 let gender = "";
+let origin = "";
 let comptOthers = 0;
 let comptOthersTowrite = 0;
 let comptRandom = 0;
 let comptRandomTowrite = 0;
-const sound = document.querySelector(".audio");
-const defil = document.querySelector(".defil");
+
+yes.addEventListener("click", showMain);
+no.addEventListener("click", showNo);
+changeMind.addEventListener("click", showMainChange);
 
 resultBtn.addEventListener("click", displayResult);
-// change partner name with a catch
+
 anotherCatch.addEventListener("click", setOthers);
-function setOthers() {
-  form.style.display = "block";
-  anotherCatch.classList.remove("anotherCatch-visible");
-  anotherRandom.classList.remove("anotherRandom-visible");
-  comptOthers++;
-  comptOthersTowrite = comptOthers - 1;
-  if (comptOthers > 3) {
-    alert(
-      "You've allready change " +
-        comptOthersTowrite +
-        " times of partner, you should be more serious!"
-    );
-  }
-  console.log(comptOthers);
-}
-// change your name with random
+genders.addEventListener("change", setGender);
+origins.addEventListener("change", setOrigin);
+
+form.addEventListener("submit", submitCatched);
 anotherRandom.addEventListener("click", setRandom);
-function setRandom() {
-  options.classList.add("options-visible");
-  anotherRandom.classList.remove("anotherRandom-visible");
-  anotherCatch.classList.remove("anotherCatch-visible");
-  comptRandom++;
-  comptRandomTowrite = comptRandom - 1;
-  if (comptRandom > 3) {
-    alert(
-      "You've allready change " +
-        comptRandomTowrite +
-        " times of firstname, shouldn't it be easier to change your partner?"
-    );
-  }
+go.addEventListener("click", getRandom);
+
+// Yes/No choice at opening
+function showMain() {
+  main.classList.add("main-visible");
+  defil.classList.add("defil-visible");
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
+}
+function showNo() {
+  noTxt.classList.add("noTxt-visible");
+  defil.classList.add("defil-visible");
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
+}
+function showMainChange() {
+  main.classList.add("main-visible");
+  noTxt.classList.remove("noTxt-visible");
+  yes.style.opacity = "0";
+  no.style.opacity = "0";
 }
 
-go.addEventListener("click", getRandom);
-//change partner
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const names = document.querySelectorAll('input[name="change"]:checked');
-  for (let name of names) {
-    inputPart.value = name.value;
-    form.reset();
-    form.style.display = "none";
-    output.innerHTML = "";
-    output.classList.remove("output-visible");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-});
-
-// get result
-
+// get and display result
 async function fetchResult() {
   const option = {
     method: "GET",
@@ -96,7 +90,6 @@ async function fetchResult() {
     console.log(error);
   }
 }
-
 async function displayResult() {
   let result = await fetchResult();
   if (result.percentage >= 50) {
@@ -120,18 +113,58 @@ async function displayResult() {
   output.classList.add("output-visible");
 }
 
-genders.addEventListener("change", setGender);
+// change partner name with a catch
+function setOthers() {
+  form.style.display = "block";
+  anotherCatch.classList.remove("anotherCatch-visible");
+  anotherRandom.classList.remove("anotherRandom-visible");
+  comptOthers++;
+  comptOthersTowrite = comptOthers - 1;
+  if (comptOthers > 3) {
+    alert(
+      "You've allready change " +
+        comptOthersTowrite +
+        " times of partner, you should be more serious!"
+    );
+  }
+  console.log(comptOthers);
+}
+function submitCatched(e) {
+  e.preventDefault();
+  const names = document.querySelectorAll('input[name="change"]:checked');
+  for (let name of names) {
+    inputPart.value = name.value;
+    form.reset();
+    form.style.display = "none";
+    output.innerHTML = "";
+    output.classList.remove("output-visible");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+// change your name with random
+function setRandom() {
+  options.classList.add("options-visible");
+  anotherRandom.classList.remove("anotherRandom-visible");
+  anotherCatch.classList.remove("anotherCatch-visible");
+  comptRandom++;
+  comptRandomTowrite = comptRandom - 1;
+  if (comptRandom > 3) {
+    alert(
+      "You've allready change " +
+        comptRandomTowrite +
+        " times of firstname, shouldn't it be easier to change your partner?"
+    );
+  }
+}
 function setGender() {
   gender = this.value;
   return gender;
 }
-
-origins.addEventListener("change", setOrigin);
 function setOrigin() {
   origin = this.value;
   return origin;
 }
-
 function getRandom() {
   let url = "https://randomuser.me/api/?gender=" + gender + "&nat=" + origin;
   console.log("URL fetched", url);
@@ -152,32 +185,4 @@ function getRandom() {
       )
     )
     .catch((err) => console.error(err));
-}
-
-const yes = document.getElementById("yes");
-const main = document.querySelector(".main");
-const no = document.getElementById("no");
-const noTxt = document.querySelector(".noTxt");
-const changeMind = document.getElementById("change-mind");
-yes.addEventListener("click", showMain);
-function showMain() {
-  main.classList.add("main-visible");
-  defil.classList.add("defil-visible");
-  yes.style.opacity = "0";
-  no.style.opacity = "0";
-}
-
-no.addEventListener("click", showNo);
-function showNo() {
-  noTxt.classList.add("noTxt-visible");
-  defil.classList.add("defil-visible");
-  yes.style.opacity = "0";
-  no.style.opacity = "0";
-}
-changeMind.addEventListener("click", showMainChange);
-function showMainChange() {
-  main.classList.add("main-visible");
-  noTxt.classList.remove("noTxt-visible");
-  yes.style.opacity = "0";
-  no.style.opacity = "0";
 }
