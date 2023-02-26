@@ -1,0 +1,33 @@
+:root {
+  --primaire: purple;
+  --secondaire: pink;
+  --tertiaire: wheat;
+  --cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif");
+  --background: url(/assets/background.jpg);
+  --noBackground: url(/assets/no-background.jpg);
+  --manHeart: url("/assets/blue-heart.svg");
+  --womanHeart: url("/assets/pink-heart.svg");
+  --linear: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.dark {
+  --primaire: red;
+  --secondaire: black;
+  --tertiaire: white;
+  --cursor: url("https://surlapage.fr/widget/cursors/17/1281074.gif");
+  --background: url(/assets/backgroundDark.jpg);
+  --noBackground: url(/assets/no-backgroundDark.jpg);
+  --manHeart: url("/assets/black-heart.svg");
+  --womanHeart: url("/assets/red-heart.svg");
+  --linear: linear-gradient(
+    90deg,
+    rgb(18, 8, 24) 0%,
+    rgb(92, 85, 85) 50%,
+    rgb(131, 129, 128) 100%
+  );
+}

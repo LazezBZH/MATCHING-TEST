@@ -2,14 +2,14 @@ body {
   max-width: 100%;
   min-height: 120vh;
   height: auto;
-  background-image: url(/assets/background.jpg);
+  background-image: var(--background);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0;
 }
 button {
-  cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif"), default;
+  cursor: var(--cursor), default;
 }
 
 /* header */
@@ -18,9 +18,9 @@ header {
   margin: 0;
   width: 100%;
   text-align: center;
-  background-color: pink;
+  background-color: var(--secondaire);
   padding: 0;
-  color: purple;
+  color: var(--primaire);
 }
 h1 {
   margin-top: 0;
@@ -30,8 +30,8 @@ h2 {
 }
 #yes,
 #no {
-  color: pink;
-  background-color: purple;
+  color: var(--secondaire);
+  background-color: var(--primaire);
   border: none;
 }
 .defil {
@@ -46,12 +46,25 @@ h2 {
 .defil input {
   width: 100%;
   border: none;
-  background-color: pink;
+  background-color: var(--secondaire);
 }
 .defil-visible {
   display: inline;
 }
-
+.choose-mode {
+  width: 5rem;
+  background-color: var(--tertiaire);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+  border-radius: 5px;
+}
+.choose-mode::before {
+  content: "switch mode ";
+  font-weight: bold;
+}
 /* when refuses to know */
 .noTxt {
   display: none;
@@ -65,7 +78,7 @@ h2 {
   right: 25%;
   top: 40%;
   transform: rotate(-20deg);
-  background-image: url(/assets/no-background.jpg);
+  background-image: var(--noBackground);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -77,7 +90,7 @@ h2 {
   height: 100%;
   margin: 0;
   font-size: 2.5rem;
-  color: purple;
+  color: var(--primaire);
   font-weight: bold;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
@@ -87,8 +100,8 @@ h2 {
 }
 .noTxt button {
   margin-right: 0.5rem;
-  background-color: purple;
-  color: pink;
+  background-color: var(--primaire);
+  color: var(--secondaire);
   border-radius: 5px;
 }
 
@@ -116,28 +129,28 @@ h2 {
 /* inputs output response */
 #input-part,
 #input-you {
-  background-color: wheat;
-  color: purple;
+  background-color: var(--tertiaire);
+  color: var(--primaire);
   text-align: center;
   padding: 0.5rem;
 }
 #resultBtn {
-  background-color: purple;
+  background-color: var(--primaire);
   padding: 0.5rem;
-  color: wheat;
+  color: var(--tertiaire);
 }
 #output {
   width: 70%;
   min-width: 240px;
-  background-color: wheat;
-  color: purple;
+  background-color: var(--tertiaire);
+  color: var(--primaire);
   font-size: 1.2rem;
   text-align: center;
   margin: 1rem auto;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   border-style: solid;
-  border-image: url("/assets/background.jpg") 200 / 10px round;
+  border-image: var(--background) 200 / 10px round;
 }
 .output {
   display: none;
@@ -146,8 +159,8 @@ h2 {
   display: block;
 }
 .response-result {
-  background-color: purple;
-  color: wheat;
+  background-color: var(--primaire);
+  color: var(--tertiaire);
   margin: 0.5rem 1rem;
 }
 .anotherCatch {
@@ -158,9 +171,9 @@ h2 {
   padding: auto 1rem;
   display: block;
   margin: 1rem auto;
-  background-color: wheat;
+  background-color: var(--tertiaire);
   padding: 0.5rem;
-  color: purple;
+  color: var(--primaire);
 }
 .anotherRandom {
   display: none;
@@ -168,9 +181,9 @@ h2 {
 .anotherRandom-visible {
   display: block;
   margin: 1rem auto;
-  background-color: wheat;
+  background-color: var(--tertiaire);
   padding: 0.5rem;
-  color: purple;
+  color: var(--primaire);
 }
 
 /* change catched partner */
@@ -200,13 +213,13 @@ input[type="radio"].change + label {
   border: none;
 }
 input[type="radio"].change-pink:checked + label {
-  background-color: pink;
+  background-color: var(--primaire);
   transform: scale(2);
   border-radius: 10px;
   z-index: 1;
 }
 input[type="radio"].change-blue:checked + label {
-  background-color: #00ddff;
+  background-color: var(--secondaire);
   transform: scale(2);
   border-radius: 10px;
   z-index: 1;
@@ -216,24 +229,24 @@ input[type="radio"].change-blue:checked + label {
   height: 4rem;
   position: relative;
   margin: 0.5rem;
-  background-image: url("/assets/pink-heart.svg");
+  background-image: var(--womanHeart);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
-  color: #800080;
+  color: var(--tertiaire);
 }
 .blue {
   width: 5rem;
   height: 4rem;
   position: relative;
   margin: 0.5rem;
-  background-image: url("/assets/blue-heart.svg");
+  background-image: var(--manHeart);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
-  color: #0000ff;
+  color: var(--primaire);
 }
 .changeBtn {
   position: absolute;
@@ -241,20 +254,14 @@ input[type="radio"].change-blue:checked + label {
   width: 7rem;
 }
 .changeBtn p {
-  color: wheat;
+  color: var(--tertiaire);
   margin: auto;
   text-align: center;
-  background-color: purple;
+  background-color: var(--primaire);
 }
 .changeBtn button {
   width: 100%;
-  background: rgb(131, 58, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
+  background: var(--linear);
   color: white;
 }
 
@@ -266,11 +273,11 @@ input[type="radio"].change-blue:checked + label {
   display: block;
 }
 .options select {
-  background-color: wheat;
+  background-color: var(--tertiaire);
 }
 .options button {
-  background-color: purple;
-  color: wheat;
+  background-color: var(--primaire);
+  color: var(--tertiaire);
 }
 
 /* responsive */
