@@ -47,6 +47,7 @@ h2 {
   width: 100%;
   border: none;
   background-color: var(--secondaire);
+  color: var(--primaire);
 }
 .defil-visible {
   display: inline;
@@ -60,6 +61,7 @@ h2 {
   padding-bottom: 0.3rem;
   padding-top: 0.3rem;
   border-radius: 5px;
+  cursor: var(--cursor), default;
 }
 .choose-mode::before {
   content: "switch mode ";
@@ -290,10 +292,22 @@ input[type="radio"].change-blue:checked + label {
   }
 }
 @media screen and (max-width: 725px) {
+  h1 {
+    width: 50%;
+    margin: auto;
+  }
   .noTxt-p h3 {
     font-size: 1.5rem;
   }
   body {
     min-height: 250vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 1.1rem;
   }
 }
