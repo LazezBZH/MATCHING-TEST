@@ -30,6 +30,7 @@ let comptOthersTowrite = 0;
 let comptRandom = 0;
 let comptRandomTowrite = 0;
 let percent = "";
+let noChosen = false;
 
 yes.addEventListener("click", showMain);
 no.addEventListener("click", showNo);
@@ -70,6 +71,7 @@ function showNo() {
   defil.classList.add("defil-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
+  noChosen = true;
   sound.innerHTML = `<audio
         autoplay
         loop
@@ -81,11 +83,20 @@ function showMainChange() {
   noTxt.classList.remove("noTxt-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
-  sound.innerHTML = `<audio
+  noChosen = false;
+  if (kitch) {
+    sound.innerHTML = `<audio
         autoplay
         loop
         src="/assets/soundMain.wav">
     </audio>`;
+  } else if (!kitch) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMainDark.mp3">
+    </audio>`;
+  }
 }
 
 // get and display result

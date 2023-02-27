@@ -28,25 +28,31 @@ modeBtn.addEventListener("click", toggleMode);
 function toggleMode() {
   body.classList.toggle("dark");
   kitch = !kitch;
-  if (kitch && percent < 50) {
+  if (noChosen) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundNo.mp3">
+    </audio>`;
+  } else if (!noChosen && kitch && percent < 50) {
     sound.innerHTML = `<audio
         autoplay
         loop
         src="/assets/soundMain.wav">
     </audio>`;
-  } else if (kitch && percent >= 50) {
+  } else if (!noChosen && kitch && percent >= 50) {
     sound.innerHTML = `<audio
         autoplay
         loop
         src="/assets/soundTop.mp3">
     </audio>`;
-  } else if (!kitch && percent < 50) {
+  } else if (!noChosen && !kitch && percent < 50) {
     sound.innerHTML = `<audio
         autoplay
         loop
         src="/assets/soundMainDark.mp3">
     </audio>`;
-  } else if (!kitch && percent >= 50) {
+  } else if (!noChosen && !kitch && percent >= 50) {
     sound.innerHTML = `<audio
         autoplay
         loop
