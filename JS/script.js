@@ -8,6 +8,7 @@ const main = document.querySelector(".main");
 const inputPart = document.getElementById("input-part");
 const inputYou = document.getElementById("input-you");
 const resultBtn = document.getElementById("resultBtn");
+const emptyInput = document.getElementById("empty-input");
 const output = document.getElementById("output");
 
 const anotherCatch = document.querySelector(".anotherCatch");
@@ -28,6 +29,7 @@ let comptOthers = 0;
 let comptOthersTowrite = 0;
 let comptRandom = 0;
 let comptRandomTowrite = 0;
+let percent = "";
 
 yes.addEventListener("click", showMain);
 no.addEventListener("click", showNo);
@@ -49,18 +51,41 @@ function showMain() {
   defil.classList.add("defil-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
+  if (kitch) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMain.wav">
+    </audio>`;
+  } else if (!kitch) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMainDark.mp3">
+    </audio>`;
+  }
 }
 function showNo() {
   noTxt.classList.add("noTxt-visible");
   defil.classList.add("defil-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
+  sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundNo.mp3">
+    </audio>`;
 }
 function showMainChange() {
   main.classList.add("main-visible");
   noTxt.classList.remove("noTxt-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
+  sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMain.wav">
+    </audio>`;
 }
 
 // get and display result
@@ -72,7 +97,6 @@ async function fetchResult() {
       "X-RapidAPI-Host": "love-calculator.p.rapidapi.com",
     },
   };
-
   output.innerHTML = "";
   let yourName = inputYou.value;
   let partName = inputPart.value;
@@ -84,33 +108,51 @@ async function fetchResult() {
         partName,
       option
     );
-
     return await res.json();
   } catch (error) {
     console.log(error);
   }
 }
 async function displayResult() {
-  let result = await fetchResult();
-  if (result.percentage >= 50) {
-    sound.innerHTML = `<audio
+  if (inputYou.value && inputPart.value) {
+    emptyInput.innerHTML = ``;
+    let result = await fetchResult();
+    percent = result.percentage;
+    if (percent >= 50 && kitch) {
+      sound.innerHTML = `<audio
         autoplay
         loop
         src="/assets/soundTop.mp3">
     </audio>`;
-  } else {
-    sound.innerHTML = `<audio
+    } else if (percent < 50 && kitch) {
+      sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/mainSound.wav">
+        src="/assets/soundMain.wav">
     </audio>`;
+    }
+    if (percent >= 50 && !kitch) {
+      sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundTopDark.mp3">
+    </audio>`;
+    } else if (percent < 50 && !kitch) {
+      sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMainDark.mp3">
+    </audio>`;
+    }
+    output.innerHTML = `<p>Hey ${result.sname} and ${result.fname}</p><p>Your Love Test Result is ${percent}% matching</p><p class="response-result"> ${result.result} </p> `;
+    anotherCatch.classList.add("anotherCatch-visible");
+    anotherRandom.classList.add("anotherRandom-visible");
+    form.style.display = "none";
+    options.classList.remove("options-visible");
+    output.classList.add("output-visible");
+  } else {
+    emptyInput.innerHTML = `* Please give us 2 firstnames!`;
   }
-  output.innerHTML = `<p>Hey ${result.sname} and ${result.fname}</p><p>Your Love Test Result is ${result.percentage}% matching</p><p class="response-result"> ${result.result} </p> `;
-  anotherCatch.classList.add("anotherCatch-visible");
-  anotherRandom.classList.add("anotherRandom-visible");
-  form.style.display = "none";
-  options.classList.remove("options-visible");
-  output.classList.add("output-visible");
 }
 
 // change partner name with a catch
@@ -127,7 +169,6 @@ function setOthers() {
         " times of partner, you should be more serious!"
     );
   }
-  console.log(comptOthers);
 }
 function submitCatched(e) {
   e.preventDefault();
@@ -167,7 +208,6 @@ function setOrigin() {
 }
 function getRandom() {
   let url = "https://randomuser.me/api/?gender=" + gender + "&nat=" + origin;
-  console.log("URL fetched", url);
   fetch(url)
     .then((response) => response.json())
     .then(
@@ -178,7 +218,6 @@ function getRandom() {
             response.results[0].name.first.toUpperCase() +
             "' will be your new firstname, click on OK and it will be writen in the input!"
         ),
-        console.log("RESPONSE", response),
         options.classList.remove("options-visible"),
         (output.innerHTML = ""),
         output.classList.remove("output-visible")

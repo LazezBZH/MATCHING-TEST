@@ -42,7 +42,7 @@
                 </form>
             </div>
             <div class="audio">
-                <audio autoplay loop src="/assets/mainSound.wav"></audio>
+                <!-- <audio autoplay loop src="/assets/mainSound.wav"></audio> -->
             </div>
             <div class="choose-mode"></div>
         </header>
@@ -61,20 +61,19 @@
                     <input title="partner's firstname" type="text" placeholder="your partner's firstname" id="input-part">
                     <button id="resultBtn">Match or not?</button>
                 </div>
+                <div id="empty-input"></div>
                 <div id="output" class="output"></div>
                 <button class="anotherCatch">You don't like this result, I can suggest you another partner</button>
                 <button class="anotherRandom">or  give you another random firstname</button>
             </div>
             <div id="select-form" class="options" action="">
                 <select title="gender" name="gender" id="gender">
-                    <option value="" >Choose a gender</option>
+                    <option value="" >Gender doesn't matter</option>
                     <option value="male">Man firstname</option>
                     <option value="female">Woman firstname</option>
-                    <option value="egal">Doesn't matter</option>
                 </select>
                  <select title="origin" name="origin" id="origin">
-                    <option value="">Choose an origin</option>
-                    <option value="egal">Random origin</option>
+                    <option value="">Random origin</option>
                     <option value="fi">Finland</option>
                     <option value="fr">France</option>
                     <option value="de">Germany</option>

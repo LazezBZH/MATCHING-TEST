@@ -23,7 +23,34 @@ scrollTxt();
 // dark mode
 const modeBtn = document.querySelector(".choose-mode");
 const body = document.querySelector("body");
+let kitch = true;
 modeBtn.addEventListener("click", toggleMode);
 function toggleMode() {
   body.classList.toggle("dark");
+  kitch = !kitch;
+  if (kitch && percent < 50) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMain.wav">
+    </audio>`;
+  } else if (kitch && percent >= 50) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundTop.mp3">
+    </audio>`;
+  } else if (!kitch && percent < 50) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMainDark.mp3">
+    </audio>`;
+  } else if (!kitch && percent >= 50) {
+    sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundTopDark.mp3">
+    </audio>`;
+  }
 }

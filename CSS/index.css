@@ -136,6 +136,14 @@ h2 {
   text-align: center;
   padding: 0.5rem;
 }
+#empty-input {
+  width: 50%;
+  color: var(--secondaire);
+  font-size: 0.8rem;
+  text-align: center;
+  background-color: var(--primaire);
+  margin: auto;
+}
 #resultBtn {
   background-color: var(--primaire);
   padding: 0.5rem;
