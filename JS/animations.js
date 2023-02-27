@@ -38,7 +38,7 @@ function toggleMode() {
     sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/soundMain.wav">
+        src="/assets/soundMain.mp3">
     </audio>`;
   } else if (!noChosen && kitch && percent >= 50) {
     sound.innerHTML = `<audio
@@ -66,6 +66,6 @@ function onload() {
   sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/soundMain.wav">
+        src="/assets/soundMain.mp3">
     </audio>`;
 }

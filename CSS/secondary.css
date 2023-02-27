@@ -1,0 +1,417 @@
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/error.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin: 0;
+}
+main {
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+}
+h1,
+h2 {
+  min-width: 172px;
+  height: 2.2rem;
+  margin: -50px 0 0 0;
+  padding: 0 10px;
+  animation: clign 2s infinite;
+  -webkit-animation: clign 2s infinite;
+  -moz-animation: clign 2s infinite;
+  -o-animation: clign 2s infinite;
+  -ms-animation: clign 2s infinite;
+}
+.alert-429 {
+  min-width: 250px;
+  text-align: center;
+  margin: 0 -50px 0 -140px;
+  transform: rotate(-30deg);
+  font-size: 1.2rem;
+  background-color: black;
+  line-height: 2rem;
+}
+button {
+  min-width: 65px;
+  padding: 5px 0;
+  background-color: black;
+  border: solid 2px whitesmoke;
+  border-radius: 2px;
+}
+a {
+  text-decoration: none;
+  color: red;
+}
+
+/* about page */
+#discord {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  flex-direction: column;
+}
+.contest {
+  display: flex;
+  margin: auto;
+}
+.contest-div {
+  display: flex;
+  flex-direction: column;
+}
+#discord h1,
+#discord h2 {
+  max-width: 436px;
+  height: 2.2rem;
+  margin: 8rem auto;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+img {
+  width: 90%;
+  height: 220px;
+  margin: auto;
+}
+h2,
+iframe {
+  margin: auto;
+}
+#discord button {
+  max-width: 320px;
+  margin: 2rem auto 0 auto;
+  padding: 0.8rem;
+}
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+}
+
+@media screen and (max-width: 1290px) {
+  body {
+    min-height: 750px;
+  }
+}
+#discord h1,
+#discord h2 {
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 914px) {
+  #discord {
+    top: 2%;
+  }
+  body {
+    min-height: 1050px;
+  }
+  .contest {
+    flex-direction: column;
+  }
+  img,
+  iframe {
+    margin-top: inherit;
+  }
+}
+@media screen and (max-width: 521px) {
+  body {
+    min-height: 850px;
+  }
+  img {
+    height: auto;
+  }
+  iframe {
+    width: 80%;
+  }
+  h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 435px) {
+  body {
+    min-height: 950px;
+  }
+}
+
+/* animation */
+@keyframes clign {
+  0% {
+    color: white;
+    opacity: 0;
+  }
+  10% {
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    color: white;
+    opacity: 1;
+  }
+  40% {
+    color: white;
+    opacity: 0;
+  }
+  45% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  55% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  65% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  75% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  80% {
+    color: black;
+    opacity: 0;
+  }
+  90% {
+    color: black;
+    opacity: 1;
+  }
+  95% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes clign {
+  0% {
+    color: white;
+    opacity: 0;
+  }
+  10% {
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    color: white;
+    opacity: 1;
+  }
+  40% {
+    color: white;
+    opacity: 0;
+  }
+  45% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  55% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  65% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  75% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  80% {
+    color: black;
+    opacity: 0;
+  }
+  90% {
+    color: black;
+    opacity: 1;
+  }
+  95% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 0;
+  }
+}
+@-moz-keyframes clign {
+  0% {
+    color: white;
+    opacity: 0;
+  }
+  10% {
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    color: white;
+    opacity: 1;
+  }
+  40% {
+    color: white;
+    opacity: 0;
+  }
+  45% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  55% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  65% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  75% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  80% {
+    color: black;
+    opacity: 0;
+  }
+  90% {
+    color: black;
+    opacity: 1;
+  }
+  95% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 0;
+  }
+}
+@-o-keyframes clign {
+  0% {
+    color: white;
+    opacity: 0;
+  }
+  10% {
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    color: white;
+    opacity: 1;
+  }
+  40% {
+    color: white;
+    opacity: 0;
+  }
+  45% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  55% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  65% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  75% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  80% {
+    color: black;
+    opacity: 0;
+  }
+  90% {
+    color: black;
+    opacity: 1;
+  }
+  95% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 0;
+  }
+}
+@-ms-keyframes clign {
+  0% {
+    color: white;
+    opacity: 0;
+  }
+  10% {
+    color: white;
+    opacity: 1;
+  }
+  25% {
+    color: white;
+    opacity: 1;
+  }
+  40% {
+    color: white;
+    opacity: 0;
+  }
+  45% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  55% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  65% {
+    color: red;
+    background-color: black;
+    opacity: 1;
+  }
+  75% {
+    color: red;
+    background-color: black;
+    opacity: 0;
+  }
+  80% {
+    color: black;
+    opacity: 0;
+  }
+  90% {
+    color: black;
+    opacity: 1;
+  }
+  95% {
+    color: black;
+    opacity: 1;
+  }
+  100% {
+    color: black;
+    opacity: 0;
+  }
+}

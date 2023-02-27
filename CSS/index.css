@@ -11,7 +11,44 @@ body {
 button {
   cursor: var(--cursor), default;
 }
-
+footer {
+  width: 96%;
+  background-color: var(--secondaire);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--primaire);
+  padding: 0.5rem 2%;
+  align-items: center;
+  gap: 20px;
+}
+footer button {
+  min-width: 79px;
+  max-height: 25px;
+  background-color: var(--primaire);
+}
+footer button a {
+  text-decoration: none;
+  color: var(--tertiaire);
+}
+footer a {
+  text-decoration: none;
+  color: var(--primaire);
+}
+footer img {
+  width: 20px;
+  float: left;
+}
+.about-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.linkedin {
+  min-width: 103px;
+}
 /* header */
 header {
   position: relative;

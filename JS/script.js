@@ -56,7 +56,7 @@ function showMain() {
     sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/soundMain.wav">
+        src="/assets/soundMain.mp3">
     </audio>`;
   } else if (!kitch) {
     sound.innerHTML = `<audio
@@ -88,7 +88,7 @@ function showMainChange() {
     sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/soundMain.wav">
+        src="/assets/soundMain.mp3">
     </audio>`;
   } else if (!kitch) {
     sound.innerHTML = `<audio
@@ -113,7 +113,7 @@ async function fetchResult() {
   let partName = inputPart.value;
   try {
     let res = await fetch(
-      "https://love-calculator.p.rapidapi.com/getPercentage?sname=" +
+      "https://2love-calculator.p.rapidapi.com/getPercentage?sname=" +
         yourName +
         "&fname=" +
         partName,
@@ -140,7 +140,7 @@ async function displayResult() {
       sound.innerHTML = `<audio
         autoplay
         loop
-        src="/assets/soundMain.wav">
+        src="/assets/soundMain.mp3">
     </audio>`;
     }
     if (percent >= 50 && !kitch) {
@@ -219,7 +219,7 @@ function setOrigin() {
   return origin;
 }
 function getRandom() {
-  let url = "https://randomuser.me/api/?gender=" + gender + "&nat=" + origin;
+  let url = "https://2randomuser.me/api/?gender=" + gender + "&nat=" + origin;
   fetch(url)
     .then((response) => response.json())
     .then(
