@@ -223,13 +223,13 @@ input[type="radio"].change + label {
   border: none;
 }
 input[type="radio"].change-pink:checked + label {
-  background-color: var(--primaire);
+  background-color: var(--secondaire);
   transform: scale(2);
   border-radius: 10px;
   z-index: 1;
 }
 input[type="radio"].change-blue:checked + label {
-  background-color: var(--secondaire);
+  background-color: var(--manBg);
   transform: scale(2);
   border-radius: 10px;
   z-index: 1;
@@ -244,7 +244,7 @@ input[type="radio"].change-blue:checked + label {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
-  color: var(--tertiaire);
+  color: var(--primaire);
 }
 .blue {
   width: 5rem;
@@ -256,7 +256,7 @@ input[type="radio"].change-blue:checked + label {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 2rem;
-  color: var(--primaire);
+  color: var(--manTxt);
 }
 .changeBtn {
   position: absolute;

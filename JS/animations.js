@@ -60,3 +60,12 @@ function toggleMode() {
     </audio>`;
   }
 }
+// onload (firefox)
+window.addEventListener("load", onload);
+function onload() {
+  sound.innerHTML = `<audio
+        autoplay
+        loop
+        src="/assets/soundMain.wav">
+    </audio>`;
+}

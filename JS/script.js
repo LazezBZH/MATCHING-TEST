@@ -121,6 +121,7 @@ async function fetchResult() {
     );
     return await res.json();
   } catch (error) {
+    window.location.replace("/error.html");
     console.log(error);
   }
 }
@@ -234,5 +235,7 @@ function getRandom() {
         output.classList.remove("output-visible")
       )
     )
-    .catch((err) => console.error(err));
+    .catch(
+      (err) => (window.location.replace("/error.html"), console.error(err))
+    );
 }

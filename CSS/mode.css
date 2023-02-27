@@ -2,6 +2,8 @@
   --primaire: purple;
   --secondaire: pink;
   --tertiaire: wheat;
+  --manTxt: blue;
+  --manBg: #00ddff;
   --cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif");
   --background: url(/assets/background.jpg);
   --noBackground: url(/assets/no-background.jpg);
@@ -19,6 +21,8 @@
   --primaire: red;
   --secondaire: black;
   --tertiaire: white;
+  --manTxt: black;
+  --manBg: red;
   --cursor: url("https://surlapage.fr/widget/cursors/17/1281074.gif");
   --background: url(/assets/backgroundDark.jpg);
   --noBackground: url(/assets/no-backgroundDark.jpg);
