@@ -19,8 +19,6 @@ const options = document.querySelector(".options");
 const origins = document.getElementById("origin");
 const genders = document.getElementById("gender");
 const go = document.getElementById("go");
-
-const sound = document.querySelector(".audio");
 const defil = document.querySelector(".defil");
 
 let gender = "";
@@ -29,7 +27,7 @@ let comptOthers = 0;
 let comptOthersTowrite = 0;
 let comptRandom = 0;
 let comptRandomTowrite = 0;
-let percent = "";
+let percent = -1;
 let noChosen = false;
 
 yes.addEventListener("click", showMain);
@@ -47,59 +45,33 @@ anotherRandom.addEventListener("click", setRandom);
 go.addEventListener("click", getRandom);
 
 // Yes/No choice at opening
+
 function showMain() {
   main.classList.add("main-visible");
   defil.classList.add("defil-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
-  if (kitch) {
-    sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMain.mp3">
-    </audio>`;
-  } else if (!kitch) {
-    sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMainDark.mp3">
-    </audio>`;
-  }
+  setSound();
 }
+
 function showNo() {
   noTxt.classList.add("noTxt-visible");
   defil.classList.add("defil-visible");
   yes.style.opacity = "0";
   no.style.opacity = "0";
   noChosen = true;
-  sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundNo.mp3">
-    </audio>`;
+  setSound();
 }
+
 function showMainChange() {
-  main.classList.add("main-visible");
   noTxt.classList.remove("noTxt-visible");
-  yes.style.opacity = "0";
-  no.style.opacity = "0";
   noChosen = false;
-  if (kitch) {
-    sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMain.mp3">
-    </audio>`;
-  } else if (!kitch) {
-    sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMainDark.mp3">
-    </audio>`;
-  }
+  showMain();
+  setSound();
 }
 
 // get and display result
+
 async function fetchResult() {
   const option = {
     method: "GET",
@@ -113,7 +85,7 @@ async function fetchResult() {
   let partName = inputPart.value;
   try {
     let res = await fetch(
-      "https://2love-calculator.p.rapidapi.com/getPercentage?sname=" +
+      "https://love-calculator.p.rapidapi.com/getPercentage?sname=" +
         yourName +
         "&fname=" +
         partName,
@@ -125,37 +97,12 @@ async function fetchResult() {
     console.log(error);
   }
 }
+
 async function displayResult() {
   if (inputYou.value && inputPart.value) {
     emptyInput.innerHTML = ``;
     let result = await fetchResult();
     percent = result.percentage;
-    if (percent >= 50 && kitch) {
-      sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundTop.mp3">
-    </audio>`;
-    } else if (percent < 50 && kitch) {
-      sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMain.mp3">
-    </audio>`;
-    }
-    if (percent >= 50 && !kitch) {
-      sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundTopDark.mp3">
-    </audio>`;
-    } else if (percent < 50 && !kitch) {
-      sound.innerHTML = `<audio
-        autoplay
-        loop
-        src="/assets/soundMainDark.mp3">
-    </audio>`;
-    }
     output.innerHTML = `<p>Hey ${result.sname} and ${result.fname}</p><p>Your Love Test Result is ${percent}% matching</p><p class="response-result"> ${result.result} </p> `;
     anotherCatch.classList.add("anotherCatch-visible");
     anotherRandom.classList.add("anotherRandom-visible");
@@ -165,9 +112,11 @@ async function displayResult() {
   } else {
     emptyInput.innerHTML = `* Please give us 2 firstnames!`;
   }
+  setSound();
 }
 
 // change partner name with a catch
+
 function setOthers() {
   form.style.display = "block";
   anotherCatch.classList.remove("anotherCatch-visible");
@@ -176,12 +125,13 @@ function setOthers() {
   comptOthersTowrite = comptOthers - 1;
   if (comptOthers > 3) {
     alert(
-      "You've allready change " +
+      "You've allready changed " +
         comptOthersTowrite +
-        " times of partner, you should be more serious!"
+        " times of partner! Advice: you should be more serious!"
     );
   }
 }
+
 function submitCatched(e) {
   e.preventDefault();
   const names = document.querySelectorAll('input[name="change"]:checked');
@@ -196,6 +146,7 @@ function submitCatched(e) {
 }
 
 // change your name with random
+
 function setRandom() {
   options.classList.add("options-visible");
   anotherRandom.classList.remove("anotherRandom-visible");
@@ -204,22 +155,25 @@ function setRandom() {
   comptRandomTowrite = comptRandom - 1;
   if (comptRandom > 3) {
     alert(
-      "You've allready change " +
+      "You've allready changed " +
         comptRandomTowrite +
-        " times of firstname, shouldn't it be easier to change your partner?"
+        " times your firstame! Advice: think about changing partner!"
     );
   }
 }
+
 function setGender() {
   gender = this.value;
   return gender;
 }
+
 function setOrigin() {
   origin = this.value;
   return origin;
 }
+
 function getRandom() {
-  let url = "https://2randomuser.me/api/?gender=" + gender + "&nat=" + origin;
+  let url = "https://randomuser.me/api/?gender=" + gender + "&nat=" + origin;
   fetch(url)
     .then((response) => response.json())
     .then(

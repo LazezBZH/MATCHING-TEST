@@ -1,7 +1,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-image: url("/assets/error.jpg");
+  background-image: url("/assets/images/error.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,6 +50,7 @@ a {
 }
 
 /* about page */
+
 #discord {
   width: 100%;
   margin: auto;
@@ -69,9 +70,9 @@ a {
 #discord h2 {
   max-width: 436px;
   height: 2.2rem;
-  margin: 8rem auto;
   padding: 1rem;
   font-size: 1.4rem;
+  margin: 2rem auto;
 }
 img {
   width: 90%;
@@ -104,10 +105,6 @@ footer {
     min-height: 750px;
   }
 }
-#discord h1,
-#discord h2 {
-  margin: 2rem auto;
-}
 
 @media screen and (max-width: 914px) {
   #discord {
@@ -122,6 +119,17 @@ footer {
   img,
   iframe {
     margin-top: inherit;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+  }
+  footer h3,
+  footer p {
+    margin: 0;
+    text-align: left;
+    margin-left: 3rem;
   }
 }
 @media screen and (max-width: 521px) {
@@ -141,6 +149,9 @@ footer {
 @media screen and (max-width: 435px) {
   body {
     min-height: 950px;
+  }
+  main {
+    top: 50%;
   }
 }
 
