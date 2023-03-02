@@ -61,7 +61,7 @@ Ce serait injuste envers ceux qui participent dans le temps imparti.
 - zolies musiques changeant selon le thème et/ou les résultats
 
 ## Video
-![gif](./assets/design/MATCHING%20TEST.gif)
+![gif](./assets/design/MATCHING%20TEST%20small.gif)
 
 
 ## Sreenshots
