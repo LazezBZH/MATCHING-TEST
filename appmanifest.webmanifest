@@ -37,5 +37,10 @@
       "type": "image/png",
       "density": "4.0"
     }
-  ]
+  ],
+  "start_url": "./",
+  "background_color": "pink",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "pink"
 }
