@@ -113,6 +113,8 @@ async function displayResult() {
     emptyInput.innerHTML = `* Please give us 2 firstnames!`;
   }
   setSound();
+  origins.options[0].selected = "selected";
+  genders.options[0].selected = "selected";
 }
 
 // change partner name with a catch

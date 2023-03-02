@@ -33,7 +33,6 @@ function setSound() {
         src="./assets/sounds/soundNo.mp3">
     </audio>`;
   } else if (kitch && percent < 50 && percent >= 0) {
-    console.log("couco");
     sound.innerHTML = `<audio
         autoplay
         loop

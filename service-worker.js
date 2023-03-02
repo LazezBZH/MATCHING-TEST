@@ -1,4 +1,4 @@
-const CACHE_NAME = `my-passwordgenerator-cache`;
+const CACHE_NAME = `matching-test-cache`;
 
 // Use the install event to pre-cache all initial resources.
 self.addEventListener("install", (event) => {
