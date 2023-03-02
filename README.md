@@ -15,7 +15,7 @@ Objectif: "Utilisation d'une API REST dans une création web."
   - [Outils](#outils)
   - [Pour le fun](#pour-le-fun)
  - [Video (in english)](#video)
- - [Sreenshots (in english)](#screenshots)
+ - [Screenshots (in english)](#screenshots)
 - [Bilan](#bilan)
 - [La voir en action](#la-voir-en-action)
 - [Moi](#moi)
@@ -64,7 +64,7 @@ Ce serait injuste envers ceux qui participent dans le temps imparti.
 ![gif](./assets/design/MATCHING%20TEST%20small.gif)
 
 
-## Sreenshots
+## Screenshots
 ![screen1](./assets/design/1.png)
 ![screen2](./assets/design/2.png)
 ![screen3](./assets/design/3.png)
