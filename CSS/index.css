@@ -36,18 +36,18 @@ footer a {
   text-decoration: none;
   color: var(--primaire);
 }
+.linkedin {
+  min-width: 103px;
+  display: flex;
+}
 footer img {
   width: 20px;
-  float: left;
 }
 .about-link {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-}
-.linkedin {
-  min-width: 103px;
 }
 /* header */
 header {

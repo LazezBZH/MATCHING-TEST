@@ -122,14 +122,10 @@ footer {
   }
 }
 @media screen and (max-width: 600px) {
-  footer {
-    flex-direction: column;
-  }
   footer h3,
   footer p {
-    margin: 0;
-    text-align: left;
-    margin-left: 3rem;
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
   }
 }
 @media screen and (max-width: 521px) {
@@ -141,9 +137,6 @@ footer {
   }
   iframe {
     width: 80%;
-  }
-  h3 {
-    display: none;
   }
 }
 @media screen and (max-width: 435px) {
