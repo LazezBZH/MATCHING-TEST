@@ -1,3 +1,7 @@
+* {
+  font-family: Cambria, serif;
+}
+
 body {
   max-width: 100%;
   min-height: 120vh;
@@ -56,7 +60,7 @@ header {
   width: 100%;
   text-align: center;
   background-color: var(--secondaire);
-  padding: 0;
+  padding: 10px 0 0 0;
   color: var(--primaire);
 }
 h1 {
@@ -338,8 +342,11 @@ input[type="radio"].change-blue:checked + label {
 }
 @media screen and (max-width: 725px) {
   h1 {
-    width: 50%;
+    width: 85%;
     margin: auto;
+  }
+  h2 {
+    font-size: 1.1rem;
   }
   .noTxt-p h3 {
     font-size: 1.5rem;
@@ -348,11 +355,15 @@ input[type="radio"].change-blue:checked + label {
     min-height: 250vh;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 460px) {
   h1 {
-    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 60px;
   }
-  h2 {
-    font-size: 1.1rem;
+}
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem;
+    padding-left: 20px;
   }
 }
