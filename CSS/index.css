@@ -29,7 +29,7 @@ footer {
 }
 footer button {
   min-width: 79px;
-  max-height: 25px;
+
   background-color: var(--primaire);
 }
 footer button a {
@@ -365,5 +365,12 @@ input[type="radio"].change-blue:checked + label {
   h1 {
     font-size: 1.8rem;
     padding-left: 20px;
+  }
+}
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 1.7rem;
+    padding-left: 0;
+    margin-left: 10px;
   }
 }
