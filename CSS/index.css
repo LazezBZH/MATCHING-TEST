@@ -46,6 +46,7 @@ footer a {
 }
 footer img {
   width: 20px;
+  height: 20px;
 }
 .about-link {
   display: flex;
