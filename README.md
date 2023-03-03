@@ -1,10 +1,11 @@
 # MATCHING TEST
 
+![lighthouse](./assets/design/lighthouse.png)
+
 Application réalisée dans le cadre du concours #4 du Designer du Web
 Objectif: "Utilisation d'une API REST dans une création web."
 
 - Le concours: [lien Youtube](https://youtu.be/9tSYNQJn6c8)
-
 
 ## Table des matières
 
@@ -14,8 +15,8 @@ Objectif: "Utilisation d'une API REST dans une création web."
   - [Technos](#technos)
   - [Outils](#outils)
   - [Pour le fun](#pour-le-fun)
- - [Video (in english)](#video)
- - [Screenshots (in english)](#screenshots)
+- [Video (in english)](#video)
+- [Screenshots (in english)](#screenshots)
 - [Bilan](#bilan)
 - [La voir en action](#la-voir-en-action)
 - [Moi](#moi)
@@ -23,19 +24,19 @@ Objectif: "Utilisation d'une API REST dans une création web."
 ## Consignes (Discord)
 
 > Votre travail doit être ORIGINAL et UNIQUE, autant au niveau du DESIGN que du CODE.
-Aucune ressemblance avec quoique ce soit sur le web n'est tolérée, sous peine d'être exclu du concours.
-Partez d'une feuille blanche et tentez de tout créer de A à Z, on doit pouvoir sentir instantanément que tout vient de vous.
+> Aucune ressemblance avec quoique ce soit sur le web n'est tolérée, sous peine d'être exclu du concours.
+> Partez d'une feuille blanche et tentez de tout créer de A à Z, on doit pouvoir sentir instantanément que tout vient de vous.
 >
 > Votre création doit également être faite spécialement pour le concours, dans le temps imparti.
-Il est interdit d'utiliser une création qu'on aurait déjà faite, et de participer à un concours avec.
-Ce serait injuste envers ceux qui participent dans le temps imparti.
+> Il est interdit d'utiliser une création qu'on aurait déjà faite, et de participer à un concours avec.
+> Ce serait injuste envers ceux qui participent dans le temps imparti.
 
 ## Réalisation
 
 ### APIs utilisées
+
 - Pour obtenir le résultat: [love calculator](https://rapidapi.com/ajith/api/love-calculator/)
 - Pour obtenir un prénom aléatoire: [random user](https://randomuser.me/)
-
 
 ### Technos
 
@@ -46,14 +47,13 @@ Ce serait injuste envers ceux qui participent dans le temps imparti.
 ### Outils
 
 - Animations en:
-     - CSS
-     - JS
+  - CSS
+  - JS
 - Thème géré par JS et CSS roots
 - LocalHost enregistre les préférences utilisateur
 - Fetch pour obtenir les données
 - et bien entendu visual studio for code pour coder, versionnig Git, stockage GitHub et déployement Netlify
 - Service worker
-
 
 ### Pour le fun
 
@@ -61,10 +61,11 @@ Ce serait injuste envers ceux qui participent dans le temps imparti.
 - zolies musiques changeant selon le thème et/ou les résultats
 
 ## Video
+
 ![gif](./assets/design/MATCHING%20TEST%20small.gif)
 
-
 ## Screenshots
+
 ![screen1](./assets/design/1.png)
 ![screen2](./assets/design/2.png)
 ![screen3](./assets/design/3.png)
