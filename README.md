@@ -1,6 +1,6 @@
 # MATCHING TEST
 
-Application réalisée dans le cadre du concours #' du Designer du Web
+Application réalisée dans le cadre du concours #4 du Designer du Web
 Objectif: "Utilisation d'une API REST dans une création web."
 
 - Le concours: [lien Youtube](https://youtu.be/9tSYNQJn6c8)
