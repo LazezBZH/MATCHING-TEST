@@ -5,8 +5,8 @@
   --manTxt: blue;
   --manBg: #00ddff;
   --cursor: url("https://surlapage.fr/widget/cursors/14/1283988.gif");
-  --background: url(/assets/images/background.jpg);
-  --noBackground: url(/assets/images/no-background.jpg);
+  --background: url(/assets/images/background.webp);
+  --noBackground: url(/assets/images/no-background.webp);
   --manHeart: url("/assets/images/blue-heart.svg");
   --womanHeart: url("/assets/images/pink-heart.svg");
   --linear: linear-gradient(
@@ -24,8 +24,8 @@
   --manTxt: black;
   --manBg: red;
   --cursor: url("https://surlapage.fr/widget/cursors/17/1281074.gif");
-  --background: url(/assets/images/backgroundDark.jpg);
-  --noBackground: url(/assets/images/no-backgroundDark.jpg);
+  --background: url(/assets/images/backgroundDark.webp);
+  --noBackground: url(/assets/images/no-backgroundDark.webp);
   --manHeart: url("/assets/images/black-heart.svg");
   --womanHeart: url("/assets/images/red-heart.svg");
   --linear: linear-gradient(
